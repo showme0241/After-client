@@ -4,37 +4,60 @@
     "parserOptions": {
         "project": "./tsconfig.json"
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": [
+        "@typescript-eslint",
+        "unused-imports",
+        "react-hooks",
+        "prettier"
+    ],
     "env": {
         "browser": true,
         "es6": true,
         "node": true
     },
+    "ignorePatterns": [
+        "**/build/**/*.*",
+        ".yarn/**/*",
+        "node_modules",
+        ".pnp.*",
+        ".yarnrc.yml",
+        "yarn.lock"
+    ],
     "extends": [
-        "next/core-web-vitals",
         "airbnb",
         "airbnb-typescript",
         "plugin:prettier/recommended",
         "plugin:@typescript-eslint/recommended"
     ],
     "rules": {
-        "react/jsx-filename-extension": [
-            1,
-            {
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
-            }
-        ],
-        "react/function-component-definition": [
-            2,
-            {
-                "namedComponents": "arrow-function"
-            }
-        ],
-        "react/prop-types": 0,
         "import/no-unresolved": "off",
         "import/no-cycle": "off",
+        "import/prefer-default-export": "off",
+        "import/extensions": "off",
+        "react/prop-types": "off",
+        "react/require-default-props": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/jsx-filename-extension": [
+            "warn",
+            { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+        ],
+        "react/function-component-definition": "off",
+        "react/destructuring-assignment": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
+        "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+        "react/no-unescaped-entities": "off",
         "no-param-reassign": "off",
         "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": "off"
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ]
     }
 }
